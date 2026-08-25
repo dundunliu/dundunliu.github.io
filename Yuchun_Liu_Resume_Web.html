@@ -3,634 +3,151 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="YuchunLiu 的个人主页，展示 AI Agent、Medical AI、Computer Vision 和边缘部署项目。" />
-<title>YuchunLiu | Personal Homepage</title>
+<meta name="description" content="Yuchun Liu 的个人主页，展示 AI Agent、Medical AI、Computer Vision 与边缘部署项目经验。" />
+<title>Yuchun Liu | AI 高级算法工程师</title>
 <style>
-  :root{
-    --bg:#f5f7f4;
-    --surface:#ffffff;
-    --surface-2:#f8faf8;
-    --line:#d8e2d8;
-    --text:#243029;
-    --muted:#5c6b62;
-    --accent:#166b5b;
-    --accent-2:#1d4f91;
-    --warm:#a45b24;
-    --shadow:0 12px 30px rgba(20,35,28,.08);
-    --radius:8px;
-  }
-  *{box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  body{
-    margin:0;
-    background:
-      linear-gradient(180deg, rgba(22,107,91,.04), rgba(22,107,91,0) 18%),
-      var(--bg);
-    color:var(--text);
-    font-family:Inter, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
-    line-height:1.6;
-  }
-  a{color:inherit;text-decoration:none}
-  a:hover{color:var(--accent)}
-  .site{
-    width:min(1120px, calc(100% - 32px));
-    margin:24px auto 36px;
-  }
-  .topbar{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:16px;
-    margin-bottom:14px;
-  }
-  .brand{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    min-width:0;
-  }
-  .mark{
-    width:14px;
-    height:14px;
-    border-radius:4px;
-    background:linear-gradient(135deg, var(--accent), var(--accent-2));
-    flex:0 0 auto;
-  }
-  .brand-name{
-    font-size:14px;
-    font-weight:800;
-    letter-spacing:0;
-    white-space:nowrap;
-  }
-  .nav{
-    display:flex;
-    flex-wrap:wrap;
-    gap:10px 14px;
-    justify-content:flex-end;
-    color:var(--muted);
-    font-size:13px;
-  }
-  .nav a{
-    padding:6px 0;
-    border-bottom:1px solid transparent;
-  }
-  .nav a:hover{border-bottom-color:var(--accent)}
-  .hero{
-    display:grid;
-    grid-template-columns:minmax(0,1.35fr) minmax(280px,.85fr);
-    gap:18px;
-    align-items:stretch;
-    margin-bottom:20px;
-  }
-  .hero-main,
-  .hero-side,
-  .section{
-    background:var(--surface);
-    border:1px solid var(--line);
-    border-radius:var(--radius);
-    box-shadow:var(--shadow);
-  }
-  .hero-main{
-    padding:28px 28px 24px;
-  }
-  .eyebrow{
-    margin:0 0 10px;
-    font-size:12px;
-    font-weight:700;
-    letter-spacing:.12em;
-    text-transform:uppercase;
-    color:var(--accent);
-  }
-  h1{
-    margin:0;
-    font-size:42px;
-    line-height:1.05;
-    letter-spacing:0;
-    color:var(--text);
-  }
-  .subtitle{
-    margin:14px 0 0;
-    max-width:62ch;
-    color:var(--muted);
-    font-size:16px;
-  }
-  .hero-tags{
-    display:flex;
-    flex-wrap:wrap;
-    gap:8px;
-    margin:18px 0 0;
-  }
-  .tag{
-    display:inline-flex;
-    align-items:center;
-    min-height:30px;
-    padding:6px 10px;
-    border:1px solid var(--line);
-    border-radius:999px;
-    background:var(--surface-2);
-    color:var(--text);
-    font-size:12px;
-    font-weight:700;
-    white-space:nowrap;
-  }
-  .contact-row{
-    display:flex;
-    flex-wrap:wrap;
-    gap:10px 12px;
-    margin-top:20px;
-    color:var(--muted);
-    font-size:14px;
-  }
-  .contact-row a{
-    color:var(--accent-2);
-    font-weight:700;
-  }
-  .hero-side{
-    padding:22px;
-    display:grid;
-    align-content:space-between;
-    gap:18px;
-  }
-  .metric-grid{
-    display:grid;
-    grid-template-columns:repeat(2, minmax(0, 1fr));
-    gap:12px;
-  }
-  .metric{
-    padding:14px 14px 13px;
-    border:1px solid var(--line);
-    border-radius:var(--radius);
-    background:var(--surface-2);
-  }
-  .metric-value{
-    display:block;
-    font-size:20px;
-    font-weight:800;
-    color:var(--accent);
-    line-height:1.1;
-  }
-  .metric-label{
-    display:block;
-    margin-top:6px;
-    color:var(--muted);
-    font-size:12px;
-  }
-  .side-note{
-    padding-top:2px;
-    color:var(--muted);
-    font-size:13px;
-  }
-  .section{
-    padding:22px 24px;
-    margin-top:16px;
-  }
-  .section-head{
-    display:flex;
-    align-items:baseline;
-    justify-content:space-between;
-    gap:16px;
-    margin-bottom:14px;
-    padding-bottom:10px;
-    border-bottom:1px solid var(--line);
-  }
-  .section-head h2{
-    margin:0;
-    font-size:18px;
-    line-height:1.2;
-    color:var(--text);
-  }
-  .section-head p{
-    margin:0;
-    color:var(--muted);
-    font-size:13px;
-  }
-  .about-grid{
-    display:grid;
-    grid-template-columns:minmax(0,1.15fr) minmax(260px,.85fr);
-    gap:18px;
-  }
-  .panel{
-    padding:16px;
-    border:1px solid var(--line);
-    border-radius:var(--radius);
-    background:var(--surface-2);
-  }
-  .panel h3{
-    margin:0 0 8px;
-    font-size:14px;
-    color:var(--text);
-  }
-  .panel p,
-  .panel li{
-    color:var(--muted);
-    font-size:13px;
-  }
-  .panel ul{
-    margin:8px 0 0 18px;
-    padding:0;
-  }
-  .project-list{
-    display:grid;
-    gap:14px;
-  }
-  .project{
-    padding:18px 18px 16px;
-    border:1px solid var(--line);
-    border-radius:var(--radius);
-    background:var(--surface);
-  }
-  .project-head{
-    display:grid;
-    grid-template-columns:minmax(0,1fr) auto;
-    gap:12px;
-    align-items:start;
-  }
-  .project-title{
-    margin:0;
-    font-size:16px;
-    line-height:1.25;
-    color:var(--text);
-  }
-  .project-meta{
-    color:var(--muted);
-    font-size:12.5px;
-    white-space:nowrap;
-    text-align:right;
-  }
-  .project-summary{
-    margin:8px 0 0;
-    color:var(--text);
-    font-size:13.5px;
-  }
-  .project-tags{
-    display:flex;
-    flex-wrap:wrap;
-    gap:8px;
-    margin:12px 0 0;
-  }
-  .project ul{
-    margin:10px 0 0 18px;
-    padding:0;
-  }
-  .project li{
-    margin:4px 0;
-    color:var(--muted);
-    font-size:13px;
-  }
-  .grid-2{
-    display:grid;
-    grid-template-columns:repeat(2, minmax(0, 1fr));
-    gap:14px;
-  }
-  .list-card{
-    padding:16px;
-    border:1px solid var(--line);
-    border-radius:var(--radius);
-    background:var(--surface-2);
-  }
-  .list-card strong{
-    display:block;
-    margin-bottom:6px;
-    color:var(--text);
-    font-size:14px;
-  }
-  .list-card p{
-    margin:0;
-    color:var(--muted);
-    font-size:13px;
-  }
-  .footer{
-    margin-top:18px;
-    color:var(--muted);
-    font-size:12px;
-    text-align:center;
-  }
-  @media (max-width: 920px){
-    .hero,
-    .about-grid,
-    .grid-2{
-      grid-template-columns:1fr;
-    }
-    .project-head{
-      grid-template-columns:1fr;
-    }
-    .project-meta{
-      text-align:left;
-      white-space:normal;
-    }
-  }
-  @media (max-width: 640px){
-    .site{
-      width:100%;
-      margin:0;
-    }
-    .topbar{
-      padding:16px 16px 0;
-      flex-direction:column;
-      align-items:flex-start;
-    }
-    .nav{
-      justify-content:flex-start;
-    }
-    .hero,
-    .section{
-      margin:12px 12px 0;
-    }
-    .hero-main,
-    .hero-side,
-    .section{
-      padding:18px 16px;
-    }
-    h1{font-size:34px}
-    .metric-grid{grid-template-columns:1fr}
-  }
-  @media print{
-    body{background:#fff}
-    .site{width:auto;margin:0}
-    .hero-main,.hero-side,.section{
-      box-shadow:none;
-    }
-  }
+  :root{--bg:#f4f8f6;--paper:#fff;--ink:#13241f;--muted:#64746d;--line:#dce7e2;--accent:#087c71;--accent-deep:#075e66;--blue:#2b5ca7;--shadow:0 18px 42px rgba(27,57,47,.08);--max:1160px}
+  *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);background:linear-gradient(180deg,#eef5f1 0,#f8fbf9 33%,#f4f8f6 100%);font-family:Inter,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",Arial,sans-serif;font-size:16px;line-height:1.62}
+  a{color:inherit;text-decoration:none}a:hover{color:var(--accent)}
+  .site-header{position:sticky;top:0;z-index:10;border-bottom:1px solid rgba(220,231,226,.95);background:rgba(248,251,249,.93);backdrop-filter:blur(14px)}
+  .header-inner{width:min(var(--max),calc(100% - 44px));min-height:62px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:24px}
+  .brand{display:flex;align-items:center;gap:12px;min-width:0}.brand-mark{width:32px;height:32px;flex:0 0 32px;display:grid;place-items:center;border-radius:11px;background:#dcece6}.brand-mark:after{content:"";width:17px;height:17px;border-radius:4px;background:linear-gradient(135deg,var(--accent),var(--blue))}
+  .brand-name{display:block;font-weight:780;letter-spacing:.01em;line-height:1.15}.brand-role{display:block;margin-top:3px;color:var(--muted);font-size:13px;line-height:1.2}.nav{display:flex;gap:24px;color:#53635c;font-size:14px;white-space:nowrap}.nav a{transition:color .2s ease}
+  main{width:min(var(--max),calc(100% - 44px));margin:0 auto}.hero{padding:56px 0 38px}.hero-inner{max-width:950px;margin:0 auto}.eyebrow{margin:0 0 18px;color:var(--accent-deep);font-size:13px;font-weight:800;letter-spacing:.16em}h1{margin:0;font-size:clamp(46px,6vw,70px);line-height:1.06;letter-spacing:-.045em}.hero-lead{max-width:900px;margin:20px 0 14px;color:#566960;font-size:20px;line-height:1.75}.hero-meta{margin:0 0 20px;color:#62746b;font-size:15px}.chips{display:flex;flex-wrap:wrap;gap:9px}.chip{padding:7px 12px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.92);color:#21332d;font-size:13px;font-weight:700;box-shadow:0 2px 7px rgba(32,65,54,.04)}
+  .quick-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:28px}.quick-card{min-height:94px;padding:18px 19px;border:1px solid var(--line);border-radius:8px;background:var(--paper)}.quick-card h3{margin:0 0 5px;font-size:18px;line-height:1.25}.quick-card p{margin:0;color:var(--muted);font-size:13px;line-height:1.55}
+  .section{padding:24px 0 18px;scroll-margin-top:76px}.section+.section{padding-top:44px}.section-head{display:flex;align-items:end;gap:14px;padding-bottom:14px;border-bottom:1px solid var(--line)}.section-head h2{position:relative;margin:0;padding-bottom:9px;font-size:26px;line-height:1.2}.section-head h2:after{content:"";position:absolute;bottom:-15px;left:0;width:48px;height:3px;border-radius:2px;background:var(--accent)}.section-head p{margin:0 0 2px;color:var(--muted);font-size:13px}
+  .work-list{padding-top:10px}.work-item{padding:13px 2px 14px;border-bottom:1px solid var(--line)}.work-top,.project-top,.education-top{display:flex;align-items:baseline;justify-content:space-between;gap:20px}.work-title{font-size:17px;font-weight:800}.work-title span,.project-role{margin-left:8px;color:var(--muted);font-size:14px;font-weight:400}.period{flex:0 0 auto;color:var(--muted);font-size:13px;white-space:nowrap}.work-points{margin:8px 0 0;padding-left:20px;color:var(--muted);font-size:14px}.work-points li{padding-left:3px}
+  .skill-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;padding-top:16px}.skill-card{min-height:108px;padding:19px;border:1px solid var(--line);border-radius:8px;background:var(--paper)}.skill-card h3{margin:0 0 8px;font-size:16px}.skill-card p{margin:0;color:var(--muted);font-size:14px;line-height:1.7}
+  .project-list{display:grid;gap:16px;padding-top:16px}.project-card{position:relative;padding:23px 25px 22px;border:1px solid var(--line);border-top:4px solid var(--accent);border-radius:8px;background:var(--paper);box-shadow:var(--shadow)}.project-card h3{margin:0;font-size:19px;line-height:1.35}.project-summary{margin:8px 0 10px;color:var(--muted);font-size:15px}.project-tech{margin:0 0 11px;color:var(--muted);font-size:14px}.project-tech strong{margin-right:10px;color:var(--accent-deep)}.project-link{display:inline-block;margin:0 0 10px;color:var(--accent-deep);font-size:13px;font-weight:800}.project-bullets{margin:0;padding-left:21px;color:var(--muted);font-size:15px}.project-bullets li{margin:7px 0;padding-left:2px}.project-bullets strong{color:#1b312a}.project-bullets em{color:#4e5d67}.project-subpoints{margin:4px 0 2px;padding-left:27px;list-style:none;color:var(--muted)}.project-subpoints li{margin:6px 0}.project-subpoints li::before{content:"–";display:inline-block;width:18px;margin-left:-18px;color:#88948e}
+  .education-list{display:grid;gap:14px;padding-top:16px}.education-card{padding:18px 19px;border:1px solid var(--line);border-radius:8px;background:var(--paper)}.education-card h3{margin:0;font-size:16px}.education-card p{margin:6px 0 0;color:var(--muted);font-size:14px}footer{margin-top:38px;padding:23px 0 30px;border-top:1px solid var(--line);color:var(--muted);text-align:center;font-size:12px}
+  @media(max-width:820px){.quick-grid{grid-template-columns:repeat(2,1fr)}.hero-lead{font-size:18px}}
+  @media(max-width:620px){.header-inner,main{width:min(100% - 28px,var(--max))}.site-header{position:static}.header-inner{align-items:flex-start;padding:13px 0}.nav{gap:11px;flex-wrap:wrap;justify-content:flex-end;font-size:12px}.hero{padding:40px 0 27px}h1{font-size:44px}.hero-lead{font-size:17px;line-height:1.7}.quick-grid,.skill-grid{grid-template-columns:1fr}.section+.section{padding-top:34px}.section-head{display:block}.section-head p{margin-top:7px}.work-top,.project-top,.education-top{display:block}.period{display:block;margin-top:4px}.project-card{padding:19px 17px}.project-card h3{font-size:18px}}
 </style>
 </head>
 <body>
-<main class="site">
-  <header class="topbar" aria-label="Top navigation">
-    <div class="brand">
-      <span class="mark" aria-hidden="true"></span>
-      <span class="brand-name">YuchunLiu</span>
-    </div>
-    <nav class="nav">
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#skills">Skills</a>
-      <a href="#education">Education</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
-
-  <section class="hero" aria-labelledby="hero-title">
-    <div class="hero-main">
-      <p class="eyebrow">Personal Homepage</p>
-      <h1 id="hero-title">YuchunLiu</h1>
-      <p class="subtitle">
-        I build applied AI systems that move from models to real workflows, with a focus on
-        AI agents, medical AI, computer vision, and edge deployment.
-      </p>
-      <div class="hero-tags" aria-label="Focus areas">
-        <span class="tag">AI Agent</span>
-        <span class="tag">Medical AI</span>
-        <span class="tag">Computer Vision</span>
-        <span class="tag">3D Reconstruction</span>
-        <span class="tag">Edge Deployment</span>
-      </div>
-      <div class="contact-row">
-        <a href="mailto:yc_liu95@163.com">yc_liu95@163.com</a>
-        <span>Available for collaboration on applied AI and productized systems.</span>
-      </div>
-    </div>
-
-    <aside class="hero-side" aria-label="Quick facts">
-      <div class="metric-grid">
-        <div class="metric">
-          <span class="metric-value">6+</span>
-          <span class="metric-label">Years across vision, medical AI, and product deployment</span>
-        </div>
-        <div class="metric">
-          <span class="metric-value">AI</span>
-          <span class="metric-label">Agents, models, data, benchmarks, and workflow automation</span>
-        </div>
-        <div class="metric">
-          <span class="metric-value">CV</span>
-          <span class="metric-label">2D / 3D vision, pose, reconstruction, tracking, OCR</span>
-        </div>
-        <div class="metric">
-          <span class="metric-value">Edge</span>
-          <span class="metric-label">Jetson, TensorRT, Docker, Flask, Redis, SDK integration</span>
-        </div>
-      </div>
-      <p class="side-note">
-        This page keeps the content in a small data block at the bottom of the file, so project
-        updates stay simple.
-      </p>
-    </aside>
-  </section>
-
-  <section class="section" id="about">
-    <div class="section-head">
-      <h2>About</h2>
-      <p>A concise snapshot of the work I do.</p>
-    </div>
-    <div class="about-grid">
-      <div class="panel">
-        <h3>Working style</h3>
-        <p>
-          I like projects that connect research, engineering, and deployment. My background spans
-          medical imaging, 2D and 3D computer vision, agent workflows, and embedded inference.
-        </p>
-        <ul>
-          <li>Move from idea to working system quickly</li>
-          <li>Keep data, evaluation, and deployment in the same loop</li>
-          <li>Favor maintainable systems over one-off demos</li>
-        </ul>
-      </div>
-      <div class="panel">
-        <h3>Current focus</h3>
-        <p>
-          AI agent frameworks, medical imaging assistants, model-driven workflow automation, and
-          edge AI systems that can ship into real environments.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="projects">
-    <div class="section-head">
-      <h2>Selected Projects</h2>
-      <p>Editable data-driven blocks, easy to extend later.</p>
-    </div>
-    <div id="project-list" class="project-list"></div>
-  </section>
-
-  <section class="section" id="skills">
-    <div class="section-head">
-      <h2>Skills</h2>
-      <p>Grouped for quick scanning.</p>
-    </div>
-    <div id="skill-grid" class="grid-2"></div>
-  </section>
-
-  <section class="section" id="education">
-    <div class="section-head">
-      <h2>Education</h2>
-      <p>Compact background summary.</p>
-    </div>
-    <div id="education-grid" class="grid-2"></div>
-  </section>
-
-  <section class="section" id="contact">
-    <div class="section-head">
-      <h2>Contact</h2>
-      <p>Keep it simple and private.</p>
-    </div>
-    <div class="panel">
-      <h3>Email</h3>
-      <p><a href="mailto:yc_liu95@163.com">yc_liu95@163.com</a></p>
-      <h3 style="margin-top:14px;">Pages</h3>
-      <p>This site is ready for GitHub Pages and uses the name YuchunLiu only.</p>
-    </div>
-  </section>
-
-  <div class="footer">YuchunLiu</div>
-</main>
-
+<header class="site-header"><div class="header-inner"><a class="brand" href="#top" aria-label="回到顶部"><span class="brand-mark" aria-hidden="true"></span><span><span class="brand-name">Yuchun Liu</span><span class="brand-role">AI 高级算法工程师 · Medical AI · AI Agent</span></span></a><nav class="nav" aria-label="页面导航"><a href="#work">工作经历</a><a href="#skills">核心技能</a><a href="#projects">项目经历</a><a href="#education">教育背景</a></nav></div></header>
+<main id="top">
+<section class="hero"><div class="hero-inner"><p class="eyebrow">PERSONAL HOMEPAGE</p><h1>Yuchun Liu</h1><p class="hero-lead">AI 高级算法工程师，具备 7 年计算机视觉与医疗 AI 研发经验，覆盖 2D/3D Computer Vision 算法、边缘端部署、医疗设备产品化，以及 AI Agent 框架设计与落地。</p><p class="hero-meta">上海 · 医疗 AI · AI Agent · 计算机视觉</p><div class="chips" aria-label="专业方向"><span class="chip">AI Agent</span><span class="chip">Medical AI</span><span class="chip">Computer Vision</span><span class="chip">3D Reconstruction</span><span class="chip">Edge Deployment</span></div></div><div class="quick-grid" aria-label="能力概览"><article class="quick-card"><h3>医疗影像</h3><p>覆盖 CT、核磁、DSA 介入手术及云胶片等场景。</p></article><article class="quick-card"><h3>AI Agent</h3><p>涉及 Agent 框架、浏览器操作、SFT、RL 与 Benchmark。</p></article><article class="quick-card"><h3>2D / 3D 视觉</h3><p>相机标定、人体姿态、3D 重建、隐式建模与光子映射。</p></article><article class="quick-card"><h3>工程落地</h3><p>Jetson、TensorRT、Docker、FastAPI、Redis 与 SDK 集成。</p></article></div></section>
+<section class="section" id="work"><div class="section-head"><h2>工作经历</h2></div><div class="work-list"><article class="work-item"><div class="work-top"><div class="work-title">上海联影智能 <span>| AI 高级算法工程师</span></div><div class="period">上海，2021.09 - 至今</div></div><ul class="work-points"><li>开发多种 AI 算法与硬件设备，赋能公司医疗影像扫描设备，探索计算机视觉与医疗健康场景的应用。</li><li>作为多个项目的主要技术负责人，推进从算法研究、工程开发到临床落地和跨团队协作的完整流程，解决实际业务痛点。</li></ul></article><article class="work-item"><div class="work-top"><div class="work-title">顺丰科技 <span>| 计算机视觉工程师</span></div><div class="period">深圳，2019.11 - 2021.09</div></div><ul class="work-points"><li>使用计算机视觉技术解决快递场景业务问题，负责多个项目的算法开发、优化及部署工作。</li></ul></article></div></section>
+<section class="section" id="skills"><div class="section-head"><h2>核心技能</h2></div><div class="skill-grid"><article class="skill-card"><h3>编程语言</h3><p>Python、C++、C#</p></article><article class="skill-card"><h3>部署与工程化</h3><p>TensorRT、NVIDIA Jetson（TX2、Orin Nano、Thor）、嵌入式部署、Docker、FastAPI、Flask、Redis、SDK Integration</p></article><article class="skill-card"><h3>深度学习与模型开发</h3><p>PyTorch、TensorFlow、Model Training、Model Optimization</p></article><article class="skill-card"><h3>计算机视觉与三维视觉</h3><p>Computer Vision、2D/3D Vision、Camera Calibration、Human Pose Modeling、Implicit Modeling、Object Classification &amp; Detection &amp; Segmentation、OCR、Tracking</p></article><article class="skill-card"><h3>AI Agent 与大模型</h3><p>Agent Framework、Tool Calling、LangChain、Playwright、SFT、Reinforcement Learning、Benchmark、Trajectory、数据标注</p></article><article class="skill-card"><h3>技术负责与产品落地</h3><p>系统架构设计、临床需求对接、跨团队协作、算法产品化、硬件选型与测试、医疗设备 SDK 集成</p></article></div></section>
+<section class="section" id="projects"><div class="section-head"><h2>项目经历</h2></div><div id="project-list" class="project-list"></div></section>
+<section class="section" id="education"><div class="section-head"><h2>教育背景</h2></div><div class="education-list"><article class="education-card"><div class="education-top"><h3>埃默里大学（Emory University）</h3><div class="period">美国亚特兰大，2017 - 2019</div></div><p>计算机科学硕士</p></article><article class="education-card"><div class="education-top"><h3>大连理工大学</h3><div class="period">辽宁大连，2013 - 2017</div></div><p>信息系统与信息管理本科</p></article></div></section>
+</main><footer>Yuchun Liu · Personal Homepage</footer>
 <script>
-  // Edit the data objects below to refresh the site without touching the layout.
-  const projects = [
-    {
-      title: "Medical Cloud Film Reading Agent",
-      period: "2026.05 - Present",
-      role: "Agent development",
-      summary: "Builds an assistant that reads cloud film links, gathers imaging data, routes them through medical models, and returns an AI-generated reading report.",
-      tags: ["LangChain", "Playwright", "SFT", "Reinforcement Learning"],
-      bullets: [
-        "Designed the browser agent workflow for web-based imaging inputs.",
-        "Built the data labeling and benchmark pipeline for agent evaluation.",
-        "Iterated SFT and RL training to improve task completion and reliability."
-      ]
-    },
-    {
-      title: "Automatic Positioning for CT / MR Scanners",
-      period: "2021.09 - 2026.05",
-      role: "Algorithm development",
-      summary: "A vision system for automated patient positioning using camera calibration, pose estimation, and 3D body reconstruction.",
-      tags: ["Camera Calibration", "Human Pose", "3D Reconstruction", "Jetson"],
-      bullets: [
-        "Connected imaging hardware with the scanning workflow.",
-        "Used pose and surface reconstruction to drive automatic bed movement.",
-        "Shipped across multiple high-end product lines and hospital deployments."
-      ]
-    },
-    {
-      title: "Projector-Interactive Imaging Device",
-      period: "2025.01 - 2026.05",
-      role: "Project lead",
-      summary: "Extended the auto-positioning system with projection and interactive sensing, enabling a tighter human-device loop.",
-      tags: ["3D Mapping", "Flask", "Redis", "Docker"],
-      bullets: [
-        "Selected and integrated projector and camera hardware.",
-        "Verified 3D camera calibration and real-time visual feedback.",
-        "Improved the service architecture for responsiveness and deployment."
-      ]
-    },
-    {
-      title: "DSA Interventional Surgery Radiation Simulation",
-      period: "2024.12 - 2026.03",
-      role: "Algorithm development",
-      summary: "A radiation simulation workflow for intervention operating rooms, combining medical imaging geometry and visual simulation tools.",
-      tags: ["GGEMS", "Blender", "Photon Mapping", "Mitsuba3"],
-      bullets: [
-        "Modeled the radiation path for a full surgical scene.",
-        "Combined CAD, multi-view camera poses, and SMPL body reconstruction.",
-        "Prepared the result set for conference-style demo and customer validation."
-      ]
-    },
-    {
-      title: "Implicit Modeling of Non-rigid Objects",
-      period: "2023.01 - 2023.12",
-      role: "Research and algorithm development",
-      summary: "A non-rigid reconstruction method using cross-category signals for medical and human-shape related scenes.",
-      tags: ["SMPL", "Deep Implicit Functions", "SDF Modeling", "PyTorch"],
-      bullets: [
-        "Built unified modeling for human bodies and internal organs.",
-        "Addressed difficult reconstruction cases caused by deformation and occlusion.",
-        "Published as first author at AAAI 2024."
-      ]
-    },
-    {
-      title: "Express Parcel Sorting Vision System",
-      period: "2019.11 - 2021.09",
-      role: "Algorithm development",
-      summary: "Computer vision algorithms for logistics sorting, including detection, recognition, segmentation, and tracking.",
-      tags: ["Detection", "Recognition", "Tracking", "OCR"],
-      bullets: [
-        "Built detection and OCR workflows for sorting scenes.",
-        "Improved algorithms around real logistics site constraints.",
-        "Contributed to industrial deployment in warehousing and parcel flows."
-      ]
-    }
-  ];
+/*
+  项目内容维护区
+  以后只编辑下面的 projects 数组，不需要修改上面的 HTML 或 CSS：
+  title = 项目名称，role = 项目角色，period = 时间，technologies = 核心技术，
+  link = 项目链接（没有链接时删除这一行），bullets = 重点内容。
+  每条 bullet 可填写 label（高亮标签）、text（正文）、highlight（需要强调的词）。
+  subpoints 用于快递项目这种缩进的子重点。
+*/
+const projects = [
+  {
+    title: "医疗云胶片解读 Agent 助手开发",
+    role: "算法开发 · 上海",
+    period: "2026.05 - 至今",
+    technologies: "Agent 开发 · LangChain · Playwright · SFT · Reinforcement Learning",
+    bullets: [
+      { label: "项目背景", text: "从 0 到 1 负责医疗云胶片 Web Agent 的技术方案设计与核心研发，围绕不同云胶片网页和影像浏览流程，搭建 Agent 框架与网页影像交互能力，使 Agent 能够完成影像入口定位、浏览与数据获取，并接入下游医学图像处理模型。" },
+      { text: "基于 Playwright 构建网页操作与影像浏览能力，设计 Agent 的工具调用和任务执行流程，持续优化异构网页 / DICOM Viewer 场景下的稳定性与泛化能力。" },
+      { text: "搭建数据标注与调试流程，构建训练 trajectory，并完成模型 SFT 训练与调优，建立可执行网页操作任务的基础能力。" },
+      { text: "推进独立 Benchmark 与 RL 训练体系建设，设计任务定义、环境及评测指标，为后续 RL 模型优化提供基础。" },
+      { label: "项目成果", text: "产品于 WAIC 2026 首次公开展示，并获得央视、东方卫视等多家媒体采访。", highlight: ["WAIC 2026"] }
+    ]
+  },
+  {
+    title: "天眼全自动智能摆位系统",
+    role: "算法开发 / 需求对接负责人 · 上海",
+    period: "2021.09 - 2026.05",
+    technologies: "相机标定 · Jetson 边缘端开发 · TensorRT · C# · Docker · PyTorch · TensorFlow",
+    link: { label: "项目链接 ↗", url: "https://www.uii-ai.com/equipment/1.html" },
+    bullets: [
+      { label: "项目内容", text: "面向 CT、核磁等大型医疗影像扫描设备，基于人体关键点识别与人体 3D 重建，实现患者自动定位与移床。" },
+      { text: "负责多种影像扫描设备的临床需求对接，以及海外团队沟通工作；例如，针对深度相机视场有限开发扩视场算法，适配海外大型患者，并结合设备参数实现病床移动路径碰撞预警等。" },
+      { label: "嵌入式开发", text: "负责多种 2D / 3D 摄像头选型，在边缘端 NVIDIA Jetson TX2、Orin Nano、Thor 等模组算法开发。负责与扫描设备搭载软件进行 SDK 集成，并进行多种显卡环境适配。使用 TensorRT 完成模型与推理优化。" },
+      { label: "项目成果", text: "算法在公司多款中高端产品上完成注册并发货，并在全球上百家医院稳定运行；所在团队获得年度卓越团队奖。", highlight: ["年度卓越团队奖"] }
+    ]
+  },
+  {
+    title: "投影仪互动型天眼设备开发",
+    role: "项目负责人 · 上海",
+    period: "2025.01 - 2026.05",
+    technologies: "硬件选型与测试 · 系统架构设计 · 3D Mapping · 投影与相机标定 · Docker · FastAPI · Redis",
+    bullets: [
+      { label: "项目内容", text: "在原有天眼自动摆位系统基础上增加投影互动功能，开发与投影光机集成的一体化硬件设备。" },
+      { text: "作为主要技术负责人，主导项目推进和技术开发工作。对 3D 摄像头和投影仪硬件设备进行选型；确认外观设计和现场安装方案，对接供应商设计方案；根据医疗扫描设备要求，制定成型机噪声、散热等系统要求。" },
+      { text: "开发并验证投影仪与相机的 3D 标定精度，使视觉识别的人体位置能够做到精确实时的投影图案变化。结合 Redis、Flask 和 Docker 技术，改进服务架构和响应速度。" },
+      { label: "项目成果", text: "完成原型机型的结构设计，达到项目开发要求，在公司产线调试环境完成真机安装和验证。在海外展会进行功能展示，受到客户好评。" }
+    ]
+  },
+  {
+    title: "DSA 介入手术场景辐射模拟算法开发",
+    role: "算法开发 · 上海",
+    period: "2024.12 - 2026.03",
+    technologies: "GGEMS · Blender · Photon Mapping · Mitsuba3",
+    bullets: [
+      { label: "项目背景", text: "面向 DSA 介入手术辐射防护，使用多相机进行手术室 3D 重建，模拟 X 光辐射剂量并实现定量实时可视化。" },
+      { label: "核心算法", text: "与美国团队共同制定方案，融合多角度相机位姿、机械臂 CAD 模型与 SMPL 人体重建结果，优化点云质量并构建高精度室内场景。将 3D 模型与材料参数输入 GGEMS，模拟 X 光传播并输出空间辐射剂量；使用 Blender 定量渲染，并基于 Mitsuba3 实现 photon mapping 可视化。" },
+      { label: "项目成果", text: "完成端到端算法方案和多个场景模拟，相关可视化功能于 RSNA 2025 展示并获得客户认可。", highlight: ["RSNA 2025"] }
+    ]
+  },
+  {
+    title: "人体与多器官的隐式表达建模",
+    role: "算法开发 · 上海",
+    period: "2023.01 - 2023.12",
+    technologies: "SMPL Human Modeling · Deep Implicit Functions · SDF Modeling · PyTorch",
+    link: { label: "论文链接 ↗", url: "https://arxiv.org/html/2312.10246v1" },
+    bullets: [
+      { label: "项目背景", text: "针对患者姿态变化导致术前影像病灶与术中位置发生形变的问题，结合术前自然图像、术前医学影像与术中自然图像，提升定位精度。" },
+      { text: "对人体和内部器官进行统一建模，模拟患者体形和姿态改变对器官形态的影响。针对医学影像中器官相互接触、形变复杂导致重建精度低的问题，开发基于深度隐式函数的多对象重建算法。" },
+      { label: "项目成果", text: "以第一作者完成论文《Implicit Modeling of Non-rigid Objects with Cross-Category Signals》，发表于 AAAI 2024。", highlight: ["AAAI 2024"] }
+    ]
+  },
+  {
+    title: "快递包裹分拣系统计算机视觉算法开发",
+    role: "算法开发 · 深圳",
+    period: "2019.11 - 2021.09",
+    technologies: "目标检测与识别 · 跟踪算法",
+    link: { label: "项目链接 ↗", url: "https://www.sf-tech.com.cn/tech/" },
+    bullets: [
+      {
+        label: "项目内容",
+        text: "负责快递场景目标检测、分割、识别与跟踪算法开发，并针对实际落地环境进行模型优化。",
+        subpoints: [
+          { label: "道路标志识别算法", text: "开发目标检测算法用于道路标识分类，集成上百类地图信息要素识别系统。" },
+          { label: "货物装机跟踪算法", text: "参与机场快递自动识别系统，开发目标跟踪算法用于分析机场车辆与货物装卸实时状态。" },
+          { label: "面单识别算法", text: "基于分拣站工业相机图像进行二维码和文字 OCR 识别，自动处理不规范面单并提高分拣效率。" }
+        ]
+      },
+      { label: "项目成果", text: "多个算法项目部署至全国快递中转系统运行，相关算法获得 10 篇专利。", highlight: ["10 篇专利"] }
+    ]
+  }
+];
 
-  const skills = [
-    {
-      title: "AI Agent / LLM Systems",
-      body: "Agent frameworks, browser automation, tool calling, SFT, reinforcement learning, benchmark design, and trajectory data."
-    },
-    {
-      title: "Computer Vision",
-      body: "2D / 3D vision, reconstruction, calibration, human pose, segmentation, OCR, detection, and tracking."
-    },
-    {
-      title: "Deployment",
-      body: "Jetson, TensorRT, Docker, embedded inference, Flask, Redis, SDK integration, and product rollout."
-    },
-    {
-      title: "Development Languages",
-      body: "Python, C++, and C# for applied AI systems and hardware-connected workflows."
-    }
-  ];
+const escapeHtml = value => String(value ?? "").replace(/[&<>\"']/g, char => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", "\"": "&quot;", "'": "&#39;" }[char]));
+const formatText = (text, highlights = []) => {
+  let result = escapeHtml(text);
+  highlights.forEach(term => {
+    const safeTerm = escapeHtml(term);
+    result = result.split(safeTerm).join(`<em><strong>${safeTerm}</strong></em>`);
+  });
+  return result;
+};
+const renderBullet = bullet => {
+  const label = bullet.label ? `<strong>${escapeHtml(bullet.label)}：</strong>` : "";
+  const subpoints = bullet.subpoints ? `<ul class="project-subpoints">${bullet.subpoints.map(item => `<li><em>${escapeHtml(item.label)}：</em>${formatText(item.text)}</li>`).join("")}</ul>` : "";
+  return `<li>${label}${formatText(bullet.text, bullet.highlight)}${subpoints}</li>`;
+};
+const renderProject = project => `<article class="project-card">
+  <div class="project-top"><h3>${escapeHtml(project.title)} <span class="project-role">| ${escapeHtml(project.role)}</span></h3><div class="period">${escapeHtml(project.period)}</div></div>
+  <p class="project-tech"><strong>核心技术：</strong>${escapeHtml(project.technologies)}</p>
+  ${project.link ? `<a class="project-link" href="${escapeHtml(project.link.url)}" target="_blank" rel="noreferrer">${escapeHtml(project.link.label)}</a>` : ""}
+  <ul class="project-bullets">${project.bullets.map(renderBullet).join("")}</ul>
+</article>`;
 
-  const education = [
-    {
-      title: "Emory University",
-      body: "M.S. in Computer Science",
-      note: "2017 - 2019"
-    },
-    {
-      title: "Dalian University of Technology",
-      body: "B.S. in Information Systems and Management",
-      note: "2013 - 2017"
-    }
-  ];
-
-  const projectList = document.getElementById("project-list");
-  projectList.innerHTML = projects.map((project) => `
-    <article class="project">
-      <div class="project-head">
-        <div>
-          <h3 class="project-title">${project.title}</h3>
-          <p class="project-summary">${project.summary}</p>
-        </div>
-        <div class="project-meta">
-          <div>${project.role}</div>
-          <div>${project.period}</div>
-        </div>
-      </div>
-      <div class="project-tags">
-        ${project.tags.map((tag) => `<span class="tag">${tag}</span>`).join("")}
-      </div>
-      <ul>
-        ${project.bullets.map((item) => `<li>${item}</li>`).join("")}
-      </ul>
-    </article>
-  `).join("");
-
-  const skillGrid = document.getElementById("skill-grid");
-  skillGrid.innerHTML = skills.map((skill) => `
-    <div class="list-card">
-      <strong>${skill.title}</strong>
-      <p>${skill.body}</p>
-    </div>
-  `).join("");
-
-  const educationGrid = document.getElementById("education-grid");
-  educationGrid.innerHTML = education.map((school) => `
-    <div class="list-card">
-      <strong>${school.title}</strong>
-      <p>${school.body}</p>
-      <p style="margin-top:6px;color:var(--warm);font-weight:700;">${school.note}</p>
-    </div>
-  `).join("");
+// 由维护区的数据生成项目卡片；页面布局和样式不需要跟着内容修改。
+document.getElementById("project-list").innerHTML = projects.map(renderProject).join("");
 </script>
 </body>
 </html>
